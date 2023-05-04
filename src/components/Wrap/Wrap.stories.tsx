@@ -28,14 +28,27 @@ export const Primary: Story = {
           LOGO
         </Title>
         <Buttons top={1} bottom={20} spacing={1}>
-          <Button colorCode={{ primary: "white", secondary: "maroon" }}>
+          <Button
+            variant="primary"
+            colorCode={{ primary: "white", secondary: "maroon" }}
+            leftIcon={<MdDashboard />}
+            rightKey={20}
+          >
             Link 1
           </Button>
-          <Button colorCode={{ primary: "white", secondary: "maroon" }}>
-            Link 1
+          <Button
+            variant="primary"
+            colorCode={{ primary: "white", secondary: "maroon" }}
+            leftIcon={<MdDashboard />}
+            rightKey={20}
+          >
+            Link 2
           </Button>
         </Buttons>
-        <Button colorCode={{ primary: "white", secondary: "maroon" }}>
+        <Button
+          variant="primary"
+          colorCode={{ primary: "white", secondary: "maroon" }}
+        >
           Log out
         </Button>
       </Navigation>

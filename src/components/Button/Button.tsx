@@ -1,4 +1,6 @@
 import React from "react";
+import styles from "./Button.module.scss";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 export interface ButtonProps
   extends React.DetailedHTMLProps<
@@ -11,11 +13,11 @@ export interface ButtonProps
     primary: string;
     secondary: string;
   };
+  leftIcon?: JSX.Element;
+  rightKey?: number;
 }
 
-const Button: React.FC<ButtonProps> = ({ colorScheme, variant, ...props }) => {
-  const { children, colorCode, style } = props;
-
+const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
   // const _style: React.CSSProperties = style || {
   //   width: "100%",
   //   height: "2.5rem",
@@ -42,7 +44,36 @@ const Button: React.FC<ButtonProps> = ({ colorScheme, variant, ...props }) => {
   //     break;
   // }
 
-  return <button>{children}</button>;
+  let variant;
+
+  switch (props.variant) {
+    case "primary":
+      variant = styles.primary;
+      break;
+
+    default:
+      variant = styles.primary;
+      break;
+  }
+
+  return (
+    <button className={variant}>
+      {props?.leftIcon ? props.leftIcon : null}
+      {children}
+      {props.rightKey ? (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            marginLeft: "auto",
+          }}
+        >
+          <MdKeyboardArrowRight size={props.rightKey} />
+        </div>
+      ) : null}
+    </button>
+  );
 };
 
 export default Button;
