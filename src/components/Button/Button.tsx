@@ -15,6 +15,7 @@ export interface ButtonProps
   };
   leftIcon?: JSX.Element;
   rightKey?: number;
+  isCentered?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
