@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./Wrap.module.scss";
+import styles from "./Navigation.module.scss";
 
-const Wrap = ({ children }) => {
+const Navigation = ({ children, ...props }) => {
   return (
     <div className={styles.main}>
       <div className={styles.children}>{children}</div>
@@ -9,4 +9,4 @@ const Wrap = ({ children }) => {
   );
 };
 
-export default Wrap;
+export default Navigation;

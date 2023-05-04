@@ -58,7 +58,13 @@ const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
   }
 
   return (
-    <button className={variant}>
+    <button
+      className={variant}
+      style={{
+        color: props.colorCode.primary,
+        backgroundColor: props.colorCode.secondary,
+      }}
+    >
       {props?.leftIcon ? props.leftIcon : null}
       {children}
       {props.rightKey ? (
