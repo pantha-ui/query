@@ -27,7 +27,7 @@ export const Primary: Story = {
         >
           LOGO
         </Title>
-        <Buttons>
+        <Buttons top={1} bottom={20} spacing={1}>
           <Button colorCode={{ primary: "white", secondary: "maroon" }}>
             Link 1
           </Button>
@@ -35,6 +35,9 @@ export const Primary: Story = {
             Link 1
           </Button>
         </Buttons>
+        <Button colorCode={{ primary: "white", secondary: "maroon" }}>
+          Log out
+        </Button>
       </Navigation>
     </Wrap>
   ),
