@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./Button.module.scss";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
 import { motion } from "framer-motion";
@@ -20,32 +19,6 @@ export interface ButtonProps
 }
 
 const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
-  // const _style: React.CSSProperties = style || {
-  //   width: "100%",
-  //   height: "2.5rem",
-  //   fontSize: "0.9rem",
-  //   backgroundColor:
-  //     variant === "primary" ? colorCode.secondary : "transparent",
-  //   color: colorCode.primary,
-  //   borderWidth: 1,
-  //   borderColor: colorCode.secondary,
-  // };
-
-  // switch (colorScheme) {
-  //   case "green":
-  //     _style.backgroundColor = "green";
-  //     _style.color = "white";
-  //     break;
-
-  //   case "yellow":
-  //     _style.backgroundColor = "yellow";
-  //     _style.color = "black";
-  //     break;
-
-  //   default:
-  //     break;
-  // }
-
   let variant;
 
   switch (props.variant) {
@@ -71,7 +44,7 @@ const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
         display: "flex",
         alignItems: "center",
         gap: "0.5rem",
-        color: props.colorCode.primary,
+        color: props.colorCode.secondary,
         backgroundColor: "transparent",
         borderColor: props.colorCode.secondary,
         outline: "none",
@@ -79,7 +52,6 @@ const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
       break;
 
     default:
-      variant = styles.primary;
       break;
   }
 

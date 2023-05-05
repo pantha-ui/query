@@ -43,8 +43,8 @@ export const Primary: Story = {
             Dashboard
           </Button>
           <Button
-            variant="outlined"
-            colorCode={{ primary: "white", secondary: "white" }}
+            variant="solid"
+            colorCode={{ primary: "white", secondary: "#0a1924" }}
             leftIcon={<BsFillPersonFill size={20} />}
             rightKey={20}
             isCentered
