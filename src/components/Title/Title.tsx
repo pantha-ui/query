@@ -1,11 +1,17 @@
 import React from "react";
-import styles from "./Title.module.scss";
 
 const Title = ({ children, ...props }) => {
+  const main = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "0.5rem",
+  };
+
   return (
     <div
-      className={styles.main}
       style={{
+        ...main,
         fontSize: props?.size ? props.size + "rem" : "initial",
         textAlign: props?.isCentered ? "center" : "initial",
         paddingTop: props?.py ? props.py + "rem" : "initial",

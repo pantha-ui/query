@@ -1,15 +1,21 @@
 import React from "react";
-import styles from "./Buttons.module.scss";
 
 const Buttons = ({ children, ...props }) => {
+  const main = {
+    display: "flex",
+    flexDirection: "column",
+  };
+
   return (
     <div
-      className={styles.main}
-      style={{
-        paddingTop: props?.top ? props.top + "rem" : "initial",
-        paddingBottom: props?.bottom ? props.bottom + "rem" : "initial",
-        gap: props?.spacing ? props.spacing + "rem" : "initial",
-      }}
+      style={
+        {
+          ...main,
+          paddingTop: props?.top ? props.top + "rem" : "initial",
+          paddingBottom: props?.bottom ? props.bottom + "rem" : "initial",
+          gap: props?.spacing ? props.spacing + "rem" : "initial",
+        } as React.CSSProperties
+      }
     >
       {children}
     </div>

@@ -1,10 +1,20 @@
 import React from "react";
-import styles from "./Wrap.module.scss";
 
 const Wrap = ({ children }) => {
+  const main = {
+    width: "100%",
+    height: "100vh",
+    display: "flex",
+    flexDirection: "row",
+  };
+
+  const _children = {
+    width: "calc(100% - 15rem)",
+  };
+
   return (
-    <div className={styles.main}>
-      <div className={styles.children}>{children}</div>
+    <div style={{ ...main } as React.CSSProperties}>
+      <div style={{ ..._children } as React.CSSProperties}>{children}</div>
     </div>
   );
 };
