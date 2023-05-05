@@ -22,7 +22,7 @@ type Story = StoryObj<typeof Wrap>;
 export const Primary: Story = {
   render: (args) => (
     <Wrap {...args}>
-      <Navigation>
+      <Navigation {...args}>
         <Title
           size="1.5"
           isCentered
@@ -34,7 +34,7 @@ export const Primary: Story = {
         </Title>
         <Buttons top={1} bottom={20} spacing={1}>
           <Button
-            variant="primary"
+            variant="solid"
             colorCode={{ primary: "white", secondary: "#0a1924" }}
             leftIcon={<MdDashboard size={20} />}
             rightKey={20}
@@ -43,8 +43,8 @@ export const Primary: Story = {
             Dashboard
           </Button>
           <Button
-            variant="primary"
-            colorCode={{ primary: "white", secondary: "#0a1924" }}
+            variant="outlined"
+            colorCode={{ primary: "white", secondary: "white" }}
             leftIcon={<BsFillPersonFill size={20} />}
             rightKey={20}
             isCentered
@@ -52,7 +52,7 @@ export const Primary: Story = {
             Profile
           </Button>
           <Button
-            variant="primary"
+            variant="solid"
             colorCode={{ primary: "white", secondary: "#0a1924" }}
             leftIcon={<BsArrowLeftRight size={20} />}
             rightKey={20}
@@ -62,7 +62,7 @@ export const Primary: Story = {
           </Button>
         </Buttons>
         <Button
-          variant="primary"
+          variant="solid"
           colorCode={{ primary: "white", secondary: "red" }}
           leftIcon={<MdLogout size={20} />}
         >

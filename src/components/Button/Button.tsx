@@ -2,13 +2,14 @@ import React from "react";
 import styles from "./Button.module.scss";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
+import { motion } from "framer-motion";
+
 export interface ButtonProps
   extends React.DetailedHTMLProps<
     React.ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
-  colorScheme?: "green" | "yellow" | "black" | "red";
-  variant?: "primary" | "secondary";
+  variant?: "solid" | "outlined";
   colorCode: {
     primary: string;
     secondary: string;
@@ -48,8 +49,33 @@ const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
   let variant;
 
   switch (props.variant) {
-    case "primary":
-      variant = styles.primary;
+    case "solid":
+      variant = {
+        padding: "0.85rem 0.5rem",
+        borderWidth: 0,
+        borderRadius: "0.25rem",
+        transition: "0.25s",
+        display: "flex",
+        alignItems: "center",
+        gap: "0.5rem",
+        color: props.colorCode.primary,
+        backgroundColor: props.colorCode.secondary,
+      };
+      break;
+
+    case "outlined":
+      variant = {
+        padding: "0.85rem 0.5rem",
+        borderWidth: 1.5,
+        borderRadius: "0.25rem",
+        display: "flex",
+        alignItems: "center",
+        gap: "0.5rem",
+        color: props.colorCode.primary,
+        backgroundColor: "transparent",
+        borderColor: props.colorCode.secondary,
+        outline: "none",
+      };
       break;
 
     default:
@@ -58,11 +84,13 @@ const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
   }
 
   return (
-    <button
-      className={variant}
+    <motion.button
       style={{
-        color: props.colorCode.primary,
-        backgroundColor: props.colorCode.secondary,
+        ...variant,
+      }}
+      whileHover={{
+        scale: 0.95,
+        transition: { duration: 0.1 },
       }}
     >
       {props?.leftIcon ? props.leftIcon : null}
@@ -79,7 +107,7 @@ const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
           <MdKeyboardArrowRight size={props.rightKey} />
         </div>
       ) : null}
-    </button>
+    </motion.button>
   );
 };
 
