@@ -1,13 +1,10 @@
 import React from "react";
 import { StoryObj } from "@storybook/react";
-import Wrap from "./Wrap";
-import Navigation from "../Navigation/Navigation";
-import Title from "../Title/Title";
-import Buttons from "../Button/Buttons";
-import Button from "../Button/Button";
 import { MdDashboard, MdLogout } from "react-icons/md";
 import { BsArrowLeftRight, BsFillPersonFill } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
+
+import { Button, Buttons, Navigation, Title, Wrap } from "../index";
 
 export default {
   title: "Components/Wrap",
