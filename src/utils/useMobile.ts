@@ -7,7 +7,7 @@ const useMobile = (num: number) => {
     setCurrentWidth(window.innerWidth);
   });
 
-  return currentWidth >= num ? [true] : [false];
+  return currentWidth <= num ? [true] : [false];
 };
 
 export default useMobile;
