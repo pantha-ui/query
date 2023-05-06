@@ -1,9 +1,24 @@
-import React from 'react'
+import React from "react";
+import Title from "../Title/Title";
+import { FcGoogle } from "react-icons/fc";
+import { AiOutlineMenu } from "react-icons/ai";
 
-const Header = () => {
+const Header = ({ ...props }) => {
+  const main = {
+    display: "flex",
+    justifyContent: "space-between",
+    padding: "1rem",
+    backgroundColor: props?.backgroundColor || "#153953",
+  };
+
   return (
-    <div>Header</div>
-  )
-}
+    <div style={{ ...main }}>
+      <Title leftIcon={<FcGoogle size={20} />} color="white">
+        LOGO
+      </Title>
+      <AiOutlineMenu color="white" />
+    </div>
+  );
+};
 
-export default Header
+export default Header;

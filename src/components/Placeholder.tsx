@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
 
 const Placeholder = () => {
   return (
-    <div>Placeholder</div>
-  )
-}
+    <div>
+      Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder
+      Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder
+      Placeholder Placeholder Placeholder{" "}
+    </div>
+  );
+};
 
-export default Placeholder
+export default Placeholder;

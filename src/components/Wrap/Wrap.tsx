@@ -1,7 +1,7 @@
 import React from "react";
 import useMobile from "../../utils/useMobile";
 import Header from "../Header/Header";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Wrap = ({ children }) => {
   const [isMobile] = useMobile(768);
@@ -16,7 +16,11 @@ const Wrap = ({ children }) => {
   return isMobile ? (
     <div style={{ ...main } as React.CSSProperties}>
       <Header />
-      <motion.div initial={{ x: "100%" }}>{children}</motion.div>
+      {true ? (
+        <AnimatePresence>
+          <motion.div>{children}</motion.div>
+        </AnimatePresence>
+      ) : null}
     </div>
   ) : (
     <div style={{ ...main } as React.CSSProperties}>{children}</div>
