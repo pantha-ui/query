@@ -2,7 +2,7 @@ import React from "react";
 
 const Navigation = ({ children, ...props }) => {
   const main = {
-    width: "15rem",
+    width: props.size,
     height: "100%",
     backgroundColor: props.backgroundColor || "#153953",
   };

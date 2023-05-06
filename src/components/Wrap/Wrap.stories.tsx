@@ -5,7 +5,6 @@ import { BsArrowLeftRight, BsFillPersonFill } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 
 import { Button, Buttons, Navigation, Title, Wrap } from "../index";
-import Container from "../Container/Container";
 import Placeholder from "../Placeholder";
 
 export default {
@@ -21,7 +20,7 @@ type Story = StoryObj<typeof Wrap>;
 export const Primary: Story = {
   render: (args) => (
     <Wrap {...args}>
-      <Navigation {...args}>
+      <Navigation size="15rem" {...args}>
         <Title
           size="1.5"
           isCentered
