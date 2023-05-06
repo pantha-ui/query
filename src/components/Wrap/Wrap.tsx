@@ -8,15 +8,7 @@ const Wrap = ({ children }) => {
     flexDirection: "row",
   };
 
-  const _children = {
-    width: "calc(100% - 15rem)",
-  };
-
-  return (
-    <div style={{ ...main } as React.CSSProperties}>
-      <div style={{ ..._children } as React.CSSProperties}>{children}</div>
-    </div>
-  );
+  return <div style={{ ...main } as React.CSSProperties}>{children}</div>;
 };
 
 export default Wrap;
