@@ -33,6 +33,7 @@ export const Primary: Story = {
         </Title>
         <Buttons top={1} bottom={20} spacing={1}>
           <Button
+            size="100%"
             variant="solid"
             colorCode={{ primary: "white", secondary: "#0a1924" }}
             leftIcon={<MdDashboard size={20} />}
@@ -42,6 +43,7 @@ export const Primary: Story = {
             Dashboard
           </Button>
           <Button
+            size="100%"
             variant="solid"
             colorCode={{ primary: "white", secondary: "#0a1924" }}
             leftIcon={<BsFillPersonFill size={20} />}
@@ -51,6 +53,7 @@ export const Primary: Story = {
             Profile
           </Button>
           <Button
+            size="100%"
             variant="solid"
             colorCode={{ primary: "white", secondary: "#0a1924" }}
             leftIcon={<BsArrowLeftRight size={20} />}
@@ -61,6 +64,7 @@ export const Primary: Story = {
           </Button>
         </Buttons>
         <Button
+          size="100%"
           variant="solid"
           colorCode={{ primary: "white", secondary: "red" }}
           leftIcon={<MdLogout size={20} />}

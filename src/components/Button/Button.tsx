@@ -16,6 +16,7 @@ export interface ButtonProps
   leftIcon?: JSX.Element;
   rightKey?: number;
   isCentered?: boolean;
+  size: "string";
 }
 
 const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
@@ -33,6 +34,7 @@ const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
         gap: "0.5rem",
         color: props.colorCode.primary,
         backgroundColor: props.colorCode.secondary,
+        width: props.size,
       };
       break;
 
@@ -48,6 +50,7 @@ const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
         backgroundColor: "transparent",
         borderColor: props.colorCode.secondary,
         outline: "none",
+        width: props.size,
       };
       break;
 
