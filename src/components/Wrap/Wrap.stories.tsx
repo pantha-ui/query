@@ -4,9 +4,8 @@ import { MdDashboard, MdLogout } from "react-icons/md";
 import { BsArrowLeftRight, BsFillPersonFill } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 
-import { Button, Buttons, Navigation, Title, Wrap } from "../index";
+import { Button, Buttons, Container, Navigation, Title, Wrap } from "../index";
 import Placeholder from "../Placeholder";
-import Container from "../Container/Container";
 
 export default {
   title: "Components/Wrap",
