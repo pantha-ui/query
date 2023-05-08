@@ -1,7 +1,5 @@
 import React from "react";
 import useMobile from "../../utils/useMobile";
-import Header from "../Header/Header";
-import { AnimatePresence, motion } from "framer-motion";
 
 const Wrap = ({ children }) => {
   const [isMobile] = useMobile(768);
@@ -13,17 +11,7 @@ const Wrap = ({ children }) => {
     flexDirection: isMobile ? "column" : "row",
   };
 
-  return isMobile ? (
-    <div style={{ ...main } as React.CSSProperties}>
-      {true ? (
-        <AnimatePresence>
-          <motion.div>{children}</motion.div>
-        </AnimatePresence>
-      ) : null}
-    </div>
-  ) : (
-    <div style={{ ...main } as React.CSSProperties}>{children}</div>
-  );
+  return <div style={{ ...main } as React.CSSProperties}>{children}</div>;
 };
 
 export default Wrap;

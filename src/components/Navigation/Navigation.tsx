@@ -37,21 +37,23 @@ const Navigation = ({ children, ...props }) => {
   };
 
   return isMobile ? (
-    <div style={{ ...overlay } as React.CSSProperties}>
+    <div>
       <Header toggleNav={toggleNav} color={props.color} />
-      <AnimatePresence>
-        {isNavOpen ? (
-          <motion.div
-            style={{ ...main } as React.CSSProperties}
-            initial={{ x: "-100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "-100%" }}
-            transition={{ type: "tween", duration: 0.2 }}
-          >
-            {children}
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
+      <div style={{ ...overlay } as React.CSSProperties}>
+        <AnimatePresence>
+          {isNavOpen ? (
+            <motion.div
+              style={{ ...main } as React.CSSProperties}
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
+              transition={{ type: "tween", duration: 0.2 }}
+            >
+              {children}
+            </motion.div>
+          ) : null}
+        </AnimatePresence>
+      </div>
     </div>
   ) : (
     <motion.div

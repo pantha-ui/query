@@ -10,7 +10,7 @@ const Header = ({ ...props }) => {
     display: "flex",
     justifyContent: "space-between",
     padding: "1rem",
-    backgroundColor: props?.backgroundColor || "#153953",
+    backgroundColor: props?.color || "#153953",
   };
 
   return (
