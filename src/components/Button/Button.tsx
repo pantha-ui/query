@@ -68,6 +68,7 @@ const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
         scale: 0.95,
         transition: { duration: 0.1 },
       }}
+      onClick={props.onClick}
     >
       {props?.leftIcon ? props.leftIcon : null}
       {children}

@@ -41,6 +41,13 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
+    "@rollup/plugin-commonjs": "^24.1.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "postcss": "^8.4.23",
+    "rollup": "^3.21.5",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript2": "^0.34.1",
     "styled-components": "^5.3.10"
   }
 }
