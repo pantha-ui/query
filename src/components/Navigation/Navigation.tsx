@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import useMobile from "../../utils/useMobile";
 import Header from "../Header/Header";
 
@@ -8,6 +8,10 @@ const Navigation = ({ children, ...props }) => {
 
   const onNavOpen = () => setIsNavOpen(true);
   const onNavClose = () => setIsNavOpen(false);
+
+  const toggleNav = () => setIsNavOpen(!isNavOpen);
+
+  console.log(isNavOpen);
 
   const [isMobile] = useMobile(768);
 
@@ -27,21 +31,30 @@ const Navigation = ({ children, ...props }) => {
     gap: "0.5rem",
   };
 
-  return (
+  return isMobile ? (
     <div>
-      {isMobile ? (
-        <Header onNavOpen={onNavOpen} onNavClose={onNavClose} />
-      ) : null}
+      <Header toggleNav={toggleNav} />
       {isNavOpen ? (
-        <motion.div
-          style={{ ...main } as React.CSSProperties}
-          initial={{ x: isMobile ? "-100%" : 0 }}
-          animate={{ x: 0 }}
-        >
-          <div style={{ ...child } as React.CSSProperties}>{children}</div>
-        </motion.div>
+        <AnimatePresence>
+          <motion.div
+            style={{ ...main } as React.CSSProperties}
+            initial={{ x: "-100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "-100%" }}
+          >
+            <div style={{ ...child } as React.CSSProperties}>{children}</div>
+          </motion.div>
+        </AnimatePresence>
       ) : null}
     </div>
+  ) : (
+    <motion.div
+      style={{ ...main } as React.CSSProperties}
+      initial={{ x: isMobile ? "-100%" : 0 }}
+      animate={{ x: 0 }}
+    >
+      <div style={{ ...child } as React.CSSProperties}>{children}</div>
+    </motion.div>
   );
 };
 

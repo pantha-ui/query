@@ -4,6 +4,8 @@ import { FcGoogle } from "react-icons/fc";
 import { AiOutlineMenu } from "react-icons/ai";
 
 const Header = ({ ...props }) => {
+  const { toggleNav } = props;
+
   const main = {
     display: "flex",
     justifyContent: "space-between",
@@ -16,7 +18,7 @@ const Header = ({ ...props }) => {
       <Title leftIcon={<FcGoogle size={20} />} color="white">
         LOGO
       </Title>
-      <AiOutlineMenu color="white" />
+      <AiOutlineMenu color="white" onClick={() => toggleNav()} />
     </div>
   );
 };
