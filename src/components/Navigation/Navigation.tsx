@@ -29,7 +29,7 @@ const Navigation = ({ children, ...props }) => {
   const main = {
     width: props.size,
     height: "100%",
-    backgroundColor: props.backgroundColor || "#153953",
+    backgroundColor: props.color || "#153953",
     position: isMobile ? "fixed" : "relative",
     margin: 0,
     inset: 0,
@@ -38,7 +38,7 @@ const Navigation = ({ children, ...props }) => {
 
   return isMobile ? (
     <div style={{ ...overlay } as React.CSSProperties}>
-      <Header toggleNav={toggleNav} />
+      <Header toggleNav={toggleNav} color={props.color} />
       <AnimatePresence>
         {isNavOpen ? (
           <motion.div
