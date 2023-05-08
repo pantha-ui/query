@@ -15,7 +15,6 @@ const Wrap = ({ children }) => {
 
   return isMobile ? (
     <div style={{ ...main } as React.CSSProperties}>
-      <Header />
       {true ? (
         <AnimatePresence>
           <motion.div>{children}</motion.div>

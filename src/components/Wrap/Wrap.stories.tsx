@@ -6,6 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 
 import { Button, Buttons, Navigation, Title, Wrap } from "../index";
 import Placeholder from "../Placeholder";
+import Container from "../Container/Container";
 
 export default {
   title: "Components/Wrap",
@@ -67,7 +68,9 @@ export const Primary: Story = {
           Log out
         </Button>
       </Navigation>
-      <Placeholder />
+      <Container>
+        <Placeholder />
+      </Container>
     </Wrap>
   ),
 };

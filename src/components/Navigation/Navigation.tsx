@@ -1,8 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import useMobile from "../../utils/useMobile";
+import Header from "../Header/Header";
 
 const Navigation = ({ children, ...props }) => {
+  const [isNavOpen, setIsNavOpen] = React.useState(false);
+
+  const onNavOpen = () => setIsNavOpen(true);
+  const onNavClose = () => setIsNavOpen(false);
+
   const [isMobile] = useMobile(768);
 
   const main = {
@@ -22,12 +28,20 @@ const Navigation = ({ children, ...props }) => {
   };
 
   return (
-    <motion.div
-      style={{ ...main } as React.CSSProperties}
-      initial={{ x: isMobile ? 0 : 0 }}
-    >
-      <div style={{ ...child } as React.CSSProperties}>{children}</div>
-    </motion.div>
+    <div>
+      {isMobile ? (
+        <Header onNavOpen={onNavOpen} onNavClose={onNavClose} />
+      ) : null}
+      {isNavOpen ? (
+        <motion.div
+          style={{ ...main } as React.CSSProperties}
+          initial={{ x: isMobile ? "-100%" : 0 }}
+          animate={{ x: 0 }}
+        >
+          <div style={{ ...child } as React.CSSProperties}>{children}</div>
+        </motion.div>
+      ) : null}
+    </div>
   );
 };
 
