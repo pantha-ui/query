@@ -1,6 +1,5 @@
 import React from "react";
 import Title from "../Title/Title";
-import { FcGoogle } from "react-icons/fc";
 import { AiOutlineMenu } from "react-icons/ai";
 
 const Header = ({ ...props }) => {
@@ -15,8 +14,8 @@ const Header = ({ ...props }) => {
 
   return (
     <div style={{ ...main }}>
-      <Title leftIcon={<FcGoogle size={20} />} color="white">
-        LOGO
+      <Title leftIcon={props.titleIcon} color="white">
+        {props.title || "LOGO"}
       </Title>
       <AiOutlineMenu color="white" onClick={() => toggleNav()} />
     </div>

@@ -38,7 +38,12 @@ const Navigation = ({ children, ...props }) => {
 
   return isMobile ? (
     <div>
-      <Header toggleNav={toggleNav} color={props.color} />
+      <Header
+        toggleNav={toggleNav}
+        color={props.color}
+        title={props.title}
+        titleIcon={props.titleIcon}
+      />
       <div style={{ ...overlay } as React.CSSProperties}>
         <AnimatePresence>
           {isNavOpen ? (

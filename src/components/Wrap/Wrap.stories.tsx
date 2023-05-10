@@ -20,7 +20,7 @@ type Story = StoryObj<typeof Wrap>;
 export const Primary: Story = {
   render: (args) => (
     <Wrap {...args}>
-      <Navigation size="15rem" {...args}>
+      <Navigation size="15rem" {...args} title="LOG" >
         <Title
           size="1.5"
           isCentered
