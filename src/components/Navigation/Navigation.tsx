@@ -28,12 +28,12 @@ const Navigation = ({ children, ...props }) => {
 
   const main = {
     width: props.size,
-    height: "100%",
+    height: "100vh",
     backgroundColor: props.color || "#153953",
-    position: isMobile ? "fixed" : "relative",
-    margin: 0,
-    inset: 0,
+    position: isMobile ? "fixed" : "sticky",
     zIndex: 20,
+    alignSelf: "flex-start",
+    top: 0,
   };
 
   return isMobile ? (
@@ -56,12 +56,8 @@ const Navigation = ({ children, ...props }) => {
       </div>
     </div>
   ) : (
-    <motion.div
-      style={{ ...main } as React.CSSProperties}
-      initial={{ x: isMobile ? "-100%" : 0 }}
-      animate={{ x: 0 }}
-    >
-      <div>{children}</div>
+    <motion.div style={{ ...main } as React.CSSProperties}>
+      {children}
     </motion.div>
   );
 };

@@ -1,23 +1,30 @@
 {
-  "name": "@modern-ui/react",
-  "version": "1.0.0",
-  "description": "",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "name": "react-reusable-ui",
+  "version": "1.0.11",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "types": "lib/dist/esm/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
   "files": [
-    "dist"
+    "src",
+    "lib"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf /dist && npm run build:esm && npm run build:cjs",
+    "build": "rollup -c",
     "build:esm": "tsc",
     "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "author": "Jamiu Ibikunle",
   "license": "ISC",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.1.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-typescript": "^11.1.0",
     "@storybook/addon-essentials": "^7.0.7",
     "@storybook/addon-interactions": "^7.0.7",
     "@storybook/addon-links": "^7.0.7",
@@ -29,25 +36,35 @@
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.1",
     "framer-motion": "^10.12.8",
+    "postcss": "^8.4.23",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
-    "storybook": "^7.0.7",
-    "typescript": "^5.0.4"
-  },
-  "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "dependencies": {
-    "@rollup/plugin-commonjs": "^24.1.0",
-    "@rollup/plugin-node-resolve": "^15.0.2",
-    "postcss": "^8.4.23",
     "rollup": "^3.21.5",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-typescript2": "^0.34.1",
-    "styled-components": "^5.3.10"
-  }
+    "storybook": "^7.0.7",
+    "typescript": "^5.0.4"
+  },
+  "peerDependencies": {
+    "framer-motion": "^10.12.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamiuoibikunle/modern-ui-react.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/jamiuoibikunle/modern-ui-react/issues"
+  },
+  "homepage": "https://github.com/jamiuoibikunle/modern-ui-react#readme",
+  "description": ""
 }
