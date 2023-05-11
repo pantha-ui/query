@@ -2,67 +2,26 @@ import React from "react";
 
 const Placeholder = () => {
   const _style = {
+    width: "100%",
+    overflowX: "scroll",
+  };
+
+  const _children = {
+    height: "2rem",
+    width: "60rem",
     display: "flex",
-    flexDirection: "column",
+    justifyContent: "space-between",
   };
 
   return (
     <div style={{ ..._style } as React.CSSProperties}>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
-      <div>This is where the body of the pages go</div>
+      <div style={{ ..._children }}>
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+        <div>Four</div>
+        <div>Five</div>
+      </div>
     </div>
   );
 };

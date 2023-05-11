@@ -6,6 +6,7 @@ const Container = ({ children }) => {
 
   const _style = {
     width: isMobile ? "100%" : "calc(100% - 15rem)",
+    overflow: "auto"
   };
 
   return <div style={{ ..._style }}>{children}</div>;

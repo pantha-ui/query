@@ -24,6 +24,7 @@ const Navigation = ({ children, ...props }) => {
     height: "100vh",
     background: isNavOpen ? "rgba(0,0,0,0.5)" : "transparent",
     zIndex: 5,
+    display: isNavOpen ? "block" : "none",
   };
 
   const main = {
