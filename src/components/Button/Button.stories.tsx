@@ -10,7 +10,7 @@ import { MdPerson } from "react-icons/md";
 
 export const SolidWithoutIcons = {
   args: {
-    colorCode: { primary: "white", secondary: "maroon" },
+    colorCode: { primary: "red.300", secondary: "maroon" },
     variant: "solid",
     children: "Go to dashboard",
   },

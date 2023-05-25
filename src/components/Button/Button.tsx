@@ -2,6 +2,7 @@ import React from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
 import { motion } from "framer-motion";
+import { colors } from "../../utils/colors";
 
 export interface ButtonProps
   extends React.DetailedHTMLProps<
@@ -33,8 +34,9 @@ const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
         display: "flex",
         alignItems: "center",
         gap: "0.5rem",
-        color: props.colorCode.primary,
-        backgroundColor: props.colorCode.secondary,
+        color: colors[props.colorCode.primary] || props.colorCode.primary,
+        backgroundColor:
+          colors[props.colorCode.secondary] || props.colorCode.secondary,
         width: props.size,
       };
       break;

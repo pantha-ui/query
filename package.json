@@ -1,6 +1,6 @@
 {
   "name": "react-reusable-ui",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
   "types": "lib/dist/esm/index.d.ts",
