@@ -4,8 +4,7 @@ import { MdDashboard, MdLogout } from "react-icons/md";
 import { BsArrowLeftRight, BsFillPersonFill } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 
-import { Button, Buttons, Container, Navigation, Title, Wrap } from "../index";
-import Placeholder from "../Placeholder";
+import { Button, Buttons, Navigation, Title, Wrap } from "../index";
 
 export default {
   title: "Components/Wrap",
@@ -20,7 +19,7 @@ type Story = StoryObj<typeof Wrap>;
 export const Primary: Story = {
   render: (args) => (
     <Wrap {...args}>
-      <Navigation size="15rem" {...args} title="LOG" >
+      <Navigation size="15rem" {...args} title="LOGO">
         <Title
           size="1.5"
           isCentered
@@ -34,7 +33,12 @@ export const Primary: Story = {
           <Button
             size="100%"
             variant="solid"
-            colorCode={{ primary: "white", secondary: "#0a1924" }}
+            color="white"
+            bg="bluegray.800"
+            onHover={{
+              bg: "bluegray.700",
+              duration: 0.65,
+            }}
             leftIcon={<MdDashboard size={20} />}
             rightKey={20}
             isCentered
@@ -44,7 +48,12 @@ export const Primary: Story = {
           <Button
             size="100%"
             variant="solid"
-            colorCode={{ primary: "white", secondary: "#0a1924" }}
+            color="white"
+            bg="bluegray.800"
+            onHover={{
+              bg: "bluegray.700",
+              duration: 0.65,
+            }}
             leftIcon={<BsFillPersonFill size={20} />}
             rightKey={20}
             isCentered
@@ -54,7 +63,12 @@ export const Primary: Story = {
           <Button
             size="100%"
             variant="solid"
-            colorCode={{ primary: "white", secondary: "#0a1924" }}
+            color="white"
+            bg="bluegray.800"
+            onHover={{
+              bg: "bluegray.700",
+              duration: 0.65,
+            }}
             leftIcon={<BsArrowLeftRight size={20} />}
             rightKey={20}
             isCentered
@@ -65,15 +79,13 @@ export const Primary: Story = {
         <Button
           size="100%"
           variant="solid"
-          colorCode={{ primary: "white", secondary: "red" }}
+          color="white"
+          bg="red.700"
           leftIcon={<MdLogout size={20} />}
         >
           Log out
         </Button>
       </Navigation>
-      <Container>
-        <Placeholder />
-      </Container>
     </Wrap>
   ),
 };
