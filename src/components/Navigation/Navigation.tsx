@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import useMobile from "../../utils/useMobile";
 import Header from "../Header/Header";
+import { colors } from "../../utils/colors";
 
 const Navigation = ({ children, ...props }) => {
   const [isNavOpen, setIsNavOpen] = React.useState(false);
@@ -30,7 +31,7 @@ const Navigation = ({ children, ...props }) => {
   const main = {
     width: props.size,
     height: "100vh",
-    backgroundColor: props.color || "#153953",
+    backgroundColor: colors[props.color] || props.color || "#153953",
     position: isMobile ? "fixed" : "sticky",
     zIndex: 20,
     alignSelf: "flex-start",
