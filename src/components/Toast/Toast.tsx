@@ -1,18 +1,33 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { MdClose } from "react-icons/md";
+import { colors } from "../../utils/colors";
 
-const Toast = () => {
+interface Props {
+  bg: string;
+  color: string;
+  duration?: number;
+  info: string;
+  isToastOpen: boolean;
+}
+
+const Toast = ({ info, duration, color, bg, isToastOpen }: Props) => {
   const styles = {
-    backgroundColor: "red",
-    color: "white",
+    backgroundColor: colors[bg] || bg,
+    color: colors[color] || color,
     padding: "1rem",
-    transition: "height 2s",
   };
 
   const [visible, setVisible] = useState(true);
 
-  return (
+  React.useEffect(() => {
+    if (duration !== undefined || null || 0)
+      setTimeout(() => {
+        setVisible(false);
+      }, duration);
+  }, []);
+
+  return isToastOpen ? (
     <AnimatePresence>
       {visible && (
         <motion.div
@@ -21,7 +36,7 @@ const Toast = () => {
           exit={{ height: 0, opacity: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div style={{ ...styles }}>This is an example of a notification.</div>
+          <div style={{ ...styles }}>{info}</div>
           <div
             style={{
               position: "absolute",
@@ -35,7 +50,7 @@ const Toast = () => {
         </motion.div>
       )}
     </AnimatePresence>
-  );
+  ) : null;
 };
 
 export default Toast;

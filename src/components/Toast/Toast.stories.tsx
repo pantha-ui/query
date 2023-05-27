@@ -7,10 +7,13 @@ export default {
 };
 
 export const ToastExample = {
-  args: {
-    color: "white",
-    bg: "blue.700",
-    variant: "outlined",
-    children: "Go to dashboard",
-  },
+  render: (args) => (
+    <Toast
+      color="white"
+      bg="green.700"
+      info="Operation successful"
+      isToastOpen={true}
+      duration={5000}
+    />
+  ),
 };
