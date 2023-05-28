@@ -26,11 +26,13 @@ const Toast = ({ info, duration, color, bg, isToastOpen, size }: Props) => {
   const [visible, setVisible] = useState(true);
 
   React.useEffect(() => {
+    if (isToastOpen) setVisible(true);
+
     if (duration !== undefined || null || 0)
       setTimeout(() => {
         setVisible(false);
       }, duration);
-  }, []);
+  }, [isToastOpen]);
 
   return isToastOpen ? (
     <AnimatePresence>
