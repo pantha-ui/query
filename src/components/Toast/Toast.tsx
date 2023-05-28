@@ -16,7 +16,7 @@ const Toast = ({ info, duration, color, bg, isToastOpen, size }: Props) => {
   const styles = {
     backgroundColor: colors[bg] || bg,
     color: colors[color] || color,
-    padding: "1rem",
+    padding: "1.5rem 1rem",
     boxSizing: "border-box",
     position: "relative",
     width: size || "100%",
@@ -46,8 +46,8 @@ const Toast = ({ info, duration, color, bg, isToastOpen, size }: Props) => {
             <div
               style={{
                 position: "absolute",
-                right: ".75rem",
-                top: ".75rem",
+                right: "0.5rem",
+                top: "0.5rem",
               }}
               onClick={() => setVisible(false)}
             >

@@ -11,7 +11,7 @@ export const ToastExample = {
     <Toast
       color="white"
       bg="green.700"
-      info="Operation successful"
+      info="Operation successful Operation successful Operation successful Operation successful Operation successful Operation successful Operation successful"
       isToastOpen={true}
     />
   ),
