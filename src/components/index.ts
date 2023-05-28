@@ -4,5 +4,6 @@ import Container from "./Container/Container";
 import Navigation from "./Navigation/Navigation";
 import Title from "./Title/Title";
 import Wrap from "./Wrap/Wrap";
+import Toast from "./Toast/Toast";
 
-export { Button, Buttons, Container, Navigation, Title, Wrap };
+export { Button, Buttons, Container, Navigation, Title, Toast, Wrap };

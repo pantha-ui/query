@@ -13,7 +13,6 @@ export const ToastExample = {
       bg="green.700"
       info="Operation successful"
       isToastOpen={true}
-      duration={5000}
     />
   ),
 };

@@ -9,13 +9,18 @@ interface Props {
   duration?: number;
   info: string;
   isToastOpen: boolean;
+  size?: string;
 }
 
-const Toast = ({ info, duration, color, bg, isToastOpen }: Props) => {
+const Toast = ({ info, duration, color, bg, isToastOpen, size }: Props) => {
   const styles = {
     backgroundColor: colors[bg] || bg,
     color: colors[color] || color,
     padding: "1rem",
+    boxSizing: "border-box",
+    position: "relative",
+    width: size || "100%",
+    margin: "0 auto",
   };
 
   const [visible, setVisible] = useState(true);
@@ -36,16 +41,18 @@ const Toast = ({ info, duration, color, bg, isToastOpen }: Props) => {
           exit={{ height: 0, opacity: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div style={{ ...styles }}>{info}</div>
-          <div
-            style={{
-              position: "absolute",
-              right: ".75rem",
-              top: ".75rem",
-            }}
-            onClick={() => setVisible(false)}
-          >
-            <MdClose size={20} color="white" />
+          <div style={{ ...styles } as React.CSSProperties}>
+            <div>{info}</div>
+            <div
+              style={{
+                position: "absolute",
+                right: ".75rem",
+                top: ".75rem",
+              }}
+              onClick={() => setVisible(false)}
+            >
+              <MdClose size={20} color="white" />
+            </div>
           </div>
         </motion.div>
       )}
