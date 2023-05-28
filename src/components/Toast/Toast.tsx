@@ -23,20 +23,20 @@ const Toast = ({ info, duration, color, bg, isToastOpen, size }: Props) => {
     margin: "0 auto",
   };
 
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(isToastOpen);
 
   React.useEffect(() => {
-    if (isToastOpen) setVisible(true);
-
     if (duration !== undefined || null || 0)
       setTimeout(() => {
         setVisible(false);
       }, duration);
+
+    setVisible(isToastOpen);
   }, [isToastOpen]);
 
-  return isToastOpen ? (
+  return visible ? (
     <AnimatePresence>
-      {visible && (
+      {isToastOpen && (
         <motion.div
           initial={{ height: 0, opacity: 0 }}
           animate={{ height: "auto", opacity: 1 }}
