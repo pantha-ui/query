@@ -27,7 +27,7 @@ export const useToast = () => {
 
 export const Toast = ({ items }) => {
   return (
-    <div>
+    <div style={{ width: "100%" }}>
       {items.map(({ bg, color, info, duration }, index) => {
         return (
           <IndividualToast
