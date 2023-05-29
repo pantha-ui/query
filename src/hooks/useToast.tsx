@@ -16,18 +16,16 @@ export const useToast = () => {
   const [items, setItems] = React.useState<ToastProps[]>([]);
 
   const toast = ({ bg, color, duration, info, size }: ToastProps) => {
-    setItems([
-      { bg, color, duration, id: items.length + 1, info, size },
+    setItems((items) => [
       ...items,
+      { bg, color, duration, id: items.length + 1, info, size },
     ]);
   };
 
   return { toast, items };
 };
 
-export const Toast = () => {
-  const { items } = useToast();
-
+export const Toast = ({ items }) => {
   return (
     <div>
       {items.map(({ bg, color, info, duration }, index) => {

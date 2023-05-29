@@ -5,6 +5,7 @@ import { BsArrowLeftRight, BsFillPersonFill } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 
 import { Button, Buttons, Container, Navigation, Title, Wrap } from "../index";
+import Placeholder from "../Placeholder";
 
 export default {
   title: "Components/Wrap",
@@ -86,6 +87,9 @@ export const Primary: Story = {
           Log out
         </Button>
       </Navigation>
+      <Container>
+        <Placeholder />
+      </Container>
     </Wrap>
   ),
 };

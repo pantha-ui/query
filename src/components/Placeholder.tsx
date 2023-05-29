@@ -1,27 +1,25 @@
 import React from "react";
+import { Toast, useToast } from "../hooks/useToast";
 
 const Placeholder = () => {
-  const _style = {
-    width: "100%",
-    overflowX: "scroll",
-  };
-
-  const _children = {
-    height: "2rem",
-    width: "60rem",
-    display: "flex",
-    justifyContent: "space-between",
-  };
+  const { toast, items } = useToast();
 
   return (
-    <div style={{ ..._style } as React.CSSProperties}>
-      <div style={{ ..._children }}>
-        <div>One</div>
-        <div>Two</div>
-        <div>Three</div>
-        <div>Four</div>
-        <div>Five</div>
-      </div>
+    <div>
+      <div>Hello</div>
+      <button
+        onClick={() =>
+          toast({
+            bg: "blue.700",
+            color: "white",
+            duration: 3000,
+            info: "Request successfully processed",
+          })
+        }
+      >
+        Add toast
+      </button>
+      <Toast items={items} />
     </div>
   );
 };

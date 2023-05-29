@@ -6,5 +6,4 @@ import Title from "./Title/Title";
 import Wrap from "./Wrap/Wrap";
 import { useToast, Toast } from "../hooks/useToast";
 
-export { Button, Buttons, Container, Navigation, Title, Toast, Wrap };
-export { useToast };
+export { Button, Buttons, Container, Navigation, Title, Toast, Wrap, useToast };
