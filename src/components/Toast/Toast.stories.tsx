@@ -1,5 +1,5 @@
 import React from "react";
-import Toast from "./Toast";
+import { Toast } from "../../hooks/useToast";
 
 export default {
   title: "Components/Toast",
@@ -7,12 +7,5 @@ export default {
 };
 
 export const ToastExample = {
-  render: (args) => (
-    <Toast
-      color="white"
-      bg="green.700"
-      info="Operation successful Operation successful Operation successful Operation successful Operation successful Operation successful Operation successful"
-      isToastOpen={true}
-    />
-  ),
+  render: (args) => <Toast />,
 };

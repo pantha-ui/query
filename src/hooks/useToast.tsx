@@ -1,18 +1,57 @@
-import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import React from "react";
+import { colors } from "../utils/colors";
 import { MdClose } from "react-icons/md";
-import { colors } from "../../utils/colors";
 
-interface Props {
+interface ToastProps {
   bg: string;
   color: string;
   duration?: number;
   info: string;
-  isToastOpen: boolean;
   size?: string;
+  id?: any;
 }
 
-const Toast = ({ info, duration, color, bg, isToastOpen, size }: Props) => {
+export const useToast = () => {
+  const [items, setItems] = React.useState<ToastProps[]>([]);
+
+  const toast = ({ bg, color, duration, info, size }: ToastProps) => {
+    setItems([
+      { bg, color, duration, id: items.length + 1, info, size },
+      ...items,
+    ]);
+  };
+
+  return { toast, items };
+};
+
+export const Toast = () => {
+  const { items } = useToast();
+
+  return (
+    <div>
+      {items.map(({ bg, color, info, duration }, index) => {
+        return (
+          <IndividualToast
+            bg={bg}
+            color={color}
+            info={info}
+            duration={duration}
+            key={index}
+          />
+        );
+      })}
+    </div>
+  );
+};
+
+export const IndividualToast = ({
+  info,
+  duration,
+  color,
+  bg,
+  size,
+}: ToastProps) => {
   const styles = {
     backgroundColor: colors[bg] || bg,
     color: colors[color] || color,
@@ -20,23 +59,14 @@ const Toast = ({ info, duration, color, bg, isToastOpen, size }: Props) => {
     boxSizing: "border-box",
     position: "relative",
     width: size || "100%",
-    margin: "0 auto",
+    margin: "0.5rem auto",
   };
 
-  const [visible, setVisible] = useState(isToastOpen);
+  const [visible, setVisible] = React.useState(true);
 
-  React.useEffect(() => {
-    if (duration !== undefined || null || 0)
-      setTimeout(() => {
-        setVisible(false);
-      }, duration);
-
-    setVisible(isToastOpen);
-  }, [isToastOpen]);
-
-  return visible ? (
+  return (
     <AnimatePresence>
-      {isToastOpen && (
+      {visible && (
         <motion.div
           initial={{ height: 0, opacity: 0 }}
           animate={{ height: "auto", opacity: 1 }}
@@ -59,7 +89,5 @@ const Toast = ({ info, duration, color, bg, isToastOpen, size }: Props) => {
         </motion.div>
       )}
     </AnimatePresence>
-  ) : null;
+  );
 };
-
-export default Toast;
