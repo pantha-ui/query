@@ -8,43 +8,37 @@ Pantha is a light library of reusable React components to help you ship faster. 
 **Import**
 
 ```js filename="example.js"
-import { useToast, Toast } from "@pantha/toast"
+import { useQuery } from "@pantha/query"
 ```
 
 **Usage**
 
-Call useToast as a hook and place Toast as a component in your code.
+Call useQuery as a hook and assign it to a variable name of your choice. We used toast here as an example.
 
 ```js filename="example.js"
 export default () => {
-  const { toast, items } = useToast();
+  const toast = useToast();
 
-  const handleNewToast = () =>
-    toast({
-      bg: "blue.700",
-      color: "white",
-      info: "Login successful, Redirecting now",
-      size: "30rem",
-    });
+  console.log(toast)
+
+  // Suppose URL is https://localhost:3000/?viewMode=dark&role=admin&name=Pantha
+
+  // Console log should return { viewMode: "dark", role: "admin", name: "Pantha" }
 
   return (
-    <div>
-      <h1>Just some random text</h1>
-      <Toast items={items} />
-      <button onClick={handleNewToast}>New toast</button>
-    </div>
+    <div></div>
   );
 };
 ```
 
 ## Installation
 
-To use @pantha/toast, install the package and its peer dependencies by running:
+To use @pantha/query, install the package by running:
 
 ```js filename="terminal"
-yarn add @pantha/toast framer-motion react-icons
+yarn add @pantha/query
 
 # or
 
-npm i @pantha/toast framer-motion react-icons
+npm i @pantha/query
 ```
