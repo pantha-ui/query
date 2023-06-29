@@ -1,1 +1,3 @@
-export * from "./components";
+import { useQuery } from "./hooks/useQuery";
+
+export { useQuery };
