@@ -1,6 +1,6 @@
 {
   "name": "@pantha/query",
-  "version": "1.0.0",
+  "version": "1.0.11",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
   "types": "lib/dist/esm/index.d.ts",
@@ -60,17 +60,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jamiuoibikunle/pantha-toast.git"
+    "url": "git+https://github.com/pantha-ui/query.git"
   },
   "author": "Ibikunle Jamiu",
   "keywords": [
     "React",
-    "Toast",
-    "Feedback"
+    "Query",
+    "Search query"
   ],
   "bugs": {
-    "url": "https://github.com/jamiuoibikunle/pantha-toast/issues"
+    "url": "https://github.com/pantha-ui/query/issues"
   },
-  "homepage": "https://github.com/jamiuoibikunle/pantha-toast#readme",
+  "homepage": "https://github.com/pantha-ui/query#readme",
   "description": "@pantha/query is a light library for accessing React search queries."
 }
