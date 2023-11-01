@@ -17,7 +17,7 @@ Call useQuery as a hook and assign it to a variable name of your choice. We used
 
 ```js filename="example.js"
 export default () => {
-  const toast = useToast();
+  const toast = useQuery();
 
   console.log(toast)
 
@@ -41,4 +41,8 @@ yarn add @pantha/query
 # or
 
 npm i @pantha/query
+
+# or
+
+pnpm i @pantha/query
 ```
